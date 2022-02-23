@@ -1,31 +1,28 @@
-source("config.R")
-
-# SVI Documentation
-if (!file.exists(SVI_DOCS)) {
-  dir.create(SVI_DOCS)
+# Global variables
+if (!exists('PROJECT_CONFIG_LOADED')) {
+  if (file.exists("config.R")) {
+    source("config.R")
+  } else {
+    stop("Error: missing config.R file")
+  }
 }
 
-download.file(
-  paste(SVI_DOCS_URL, SVI_DOC_FILE, sep = '/'),
-  paste(SVI_DOCS, SVI_DOC_FILE, sep = '/')
-)
+if (!dir.exists(DATA_PATH)) dir.create(DATA_PATH)
+if (!dir.exists(SVI_DATA_PATH)) dir.create(SVI_DATA_PATH)
+if (!dir.exists(SHAPES_PATH)) dir.create(SHAPES_PATH)
+if (!dir.exists(SVI_DOCS_PATH)) dir.create(SVI_DOCS_PATH)
 
 # CDC SVI CSV Data File for North Carolina Counties
+if (!file.exists(SVI_RDATA_DST)) {
+  svi_data <- read.csv(SVI_CSV_SRC)
+  save(svi_data, file = SVI_RDATA_DST)
+}
 
-filename_svi_nc_county_csv <- paste(SVI_STATE_COUNTY, ".csv", sep = '')
-url_svi_nc_county_csv <- 
-  paste(SVI_BASEURL, "CSV/States_Counties", 
-        filename_svi_nc_county_csv, sep = '/')
-download.file(url_svi_nc_county_csv, 
-              paste(SVI_DATA, filename_svi_nc_county_csv, sep = '/'))
+# SVI Documentation
+if (!file.exists(SVI_DOC_DST)) download.file(SVI_DOC_SRC, SVI_DOC_DST)
 
 # CDC SVI Shapefiles for North Carolina Counties
+if (!file.exists(SHAPES_ZIP_DST)) download.file(SHAPES_ZIP_SRC, SHAPES_ZIP_DST)
+unzip(SHAPES_ZIP_DST, exdir = SHAPES_PATH)
 
-filename_svi_nc_county_shapefiles <- paste(SVI_STATE_COUNTY, ".zip", sep = '')
-url_svi_nc_county_shapefiles <- 
-  paste(SVI_BASEURL, "States_Counties", 
-        filename_svi_nc_county_shapefiles, sep = '/')
-dest_svi_nc_county_shapefiles <- 
-  paste(SVI_SHAPES, filename_svi_nc_county_shapefiles, sep = '/')
-download.file(url_svi_nc_county_shapefiles, dest_svi_nc_county_shapefiles)
-unzip(dest_svi_nc_county_shapefiles, exdir = SVI_SHAPES)
+if (exists('svi_data')) rm(svi_data)
