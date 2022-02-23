@@ -25,3 +25,8 @@ SVI_STATE_COUNTY <- paste(gsub("[[:space:]]", "", STATE), "_COUNTY", sep = '')
 
 # Extract County_FIPS values from SVI CSV file
 COUNTY_FIPS_DATA <- paste(DATA_PATH, "county_fips", sep = '/')
+
+# CDC COVID-19 Data
+COVID_DATA <- paste(DATA_PATH, "covid", sep = '/')
+COVID_DATA_FILE <- paste(COVID_DATA, "nc_covid_data.RData", sep = '/')
+COVID_URL <- "https://data.cdc.gov/resource/n8mc-b4w4.json?state_fips_code=37"
