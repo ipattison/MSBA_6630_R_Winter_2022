@@ -1,0 +1,60 @@
+﻿COLUMN_NAME,DESCRIPTION,TYPE
+ST,State-level FIPS code,character
+STATE,State name,character
+ST_ABBR,State abbreviation,character
+COUNTY,County name,character
+FIPS,County-level FIPS code,character
+LOCATION,"Text description of tract, county, state",character
+AREA_SQMI,Tract area in square miles,numeric
+E_TOTPOP,"Population estimate, 2014-2018 ACS",numeric
+M_TOTPOP,"Population estimate MOE, 2014-2018 ACS",numeric
+E_HU,"Housing units estimate, 2014-2018 ACS",numeric
+M_HU,"Housing units estimate MOE, 2014-2018 ACS",numeric
+E_HH,"Households estimate, 2014-2018 ACS",numeric
+M_HH,"Households estimate MOE, 2014-2018 ACS",numeric
+E_POV,"Persons below poverty estimate, 2014-2018 ACS",numeric
+M_POV,"Persons below poverty estimate MOE, 2014-2018 ACS",numeric
+E_UNEMP,"Civilian (age 16+) unemployed estimate, 2014- 2018 ACS",numeric
+M_UNEMP,"Civilian (age 16+) unemployed estimate MOE, 2014- 2018 ACS",numeric
+E_PCI,"Per capita income estimate, 2014- 2018 ACS",numeric
+M_PCI,"Per capita income estimate MOE, 2014- 2018 ACS",numeric
+E_NOHSDP,"Persons (age 25+) with no high school diploma estimate, 2014- 2018 ACS",numeric
+M_NOHSDP,"Persons (age 25+) with no high school diploma estimate MOE, 2014- 2018 ACS",numeric
+E_AGE65,"Persons aged 65 and older estimate, 2014 - 2018 ACS",numeric
+M_AGE65,"Persons aged 65 and older estimate MOE, 2014 - 2018 ACS",numeric
+E_AGE17,"Persons aged 17 and younger estimate, 2014 - 2018 ACS",numeric
+M_AGE17,"Persons aged 17 and younger estimate MOE, 2014 - 2018 ACS",numeric
+E_DISABL,"Civilian noninstitutionalize d population with a disability estimate, 2014 - 2018 ACS",numeric
+M_DISABL,"Civilian noninstitutionalize d population with a disability estimate MOE, 2014 - 2018 ACS",numeric
+E_SNGPNT,"Single parent household with children under 18 estimate, 2014 - 2018 ACS",numeric
+M_SNGPNT,"Single parent household with children under 18 estimate MOE, 2014 - 2018 ACS",numeric
+E_MINRTY,"Minority (all persons except white, nonHispanic) estimate, 2014-2018 ACS",numeric
+M_MINRTY,"Minority (all persons except white, nonHispanic) estimate MOE, 2014-2018 ACS",numeric
+E_LIMENG,"Persons (age 5+) who speak English ""less than well"" estimate, 2014- 2018 ACS",numeric
+M_LIMENG,"Persons (age 5+) who speak English ""less than well"" estimate MOE, 2014- 2018 ACS",numeric
+E_MUNIT,"Housing in structures with 10 or more units estimate, 2014 -2018 ACS",numeric
+M_MUNIT,"Housing in structures with 10 or more units estimate MOE, 2014 -2018 ACS",numeric
+E_MOBILE,"Mobile homes estimate, 2014 - 2018 ACS",numeric
+M_MOBILE,"Mobile homes estimate MOE, 2014 - 2018 ACS",numeric
+E_CROWD,"At household level (occupied housing units), more people than rooms estimate, 2014- 2018 ACS",numeric
+M_CROWD,"At household level (occupied housing units), more people than rooms estimate MOE, 2014- 2018 ACS",numeric
+E_NOVEH,"ouseholds with no vehicle available estimate, 2014-2018 ACS",numeric
+M_NOVEH,"ouseholds with no vehicle available estimate MOE, 2014-2018 ACS",numeric
+E_GROUPQ,"Persons in institutionalized group quarters estimate, 2014- 2018 ACS",numeric
+M_GROUPQ,"Persons in institutionalized group quarters estimate MOE, 2014- 2018 ACS",numeric
+EP_POV,Percentage of persons below poverty estimate,numeric
+MP_POV,Percentage of persons below poverty estimate MOE,numeric
+EP_UNEMP,Unemployment Rate estimate,numeric
+MP_UNEMP,Unemployment Rate estimate MOE ,numeric
+EP_PCI,"Per capita income estimate, 2014- 2018 ACS",numeric
+MP_PCI,"Per capita income estimate MOE, 2014- 2018 ACS",numeric
+EP_NOHSDP,Percentage of persons with no high school diploma (age 25+) estimate,numeric
+MP_NOHSDP,Percentage of persons with no high school diploma (age 25+) estimate MOE,numeric
+EP_AGE65,"Percentage of persons aged 65 and older estimate, 2014- 2018 ACS",numeric
+MP_AGE65,"Percentage of persons aged 65 and older estimate MOE, 2014-2018 ACS",numeric
+EP_AGE17,"Percentage of persons aged 17 and younger estimate, 2014- 2018 ACS",numeric
+MP_AGE17,"Percentage of persons aged 17 and younger estimate MOE, 2014- 2018 ACS",numeric
+EP_DISABL,"Percentage of civilian noninstitutionalize d population with a disability estimate, 2014-2018 ACS",numeric
+MP_DISABL,"Percentage of civilian noninstitutionalize d population with a disability estimate MOE, 2014-2018 ACS",numeric
+EP_SNGPNT,"Percentage of single parent households with children under 18 estimate, 2014- 2018 ACS",numeric
+MP_SNGPNT,"Percentage of single parent households with children under 18 estimate MOE, 2014- 2018 ACS",numeric
