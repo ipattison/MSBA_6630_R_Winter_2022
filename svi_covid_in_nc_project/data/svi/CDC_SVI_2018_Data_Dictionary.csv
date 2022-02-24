@@ -1,60 +1,125 @@
-﻿COLUMN_NAME,DESCRIPTION,TYPE
-ST,State-level FIPS code,character
-STATE,State name,character
-ST_ABBR,State abbreviation,character
-COUNTY,County name,character
-FIPS,County-level FIPS code,character
-LOCATION,"Text description of tract, county, state",character
-AREA_SQMI,Tract area in square miles,numeric
-E_TOTPOP,"Population estimate, 2014-2018 ACS",numeric
-M_TOTPOP,"Population estimate MOE, 2014-2018 ACS",numeric
-E_HU,"Housing units estimate, 2014-2018 ACS",numeric
-M_HU,"Housing units estimate MOE, 2014-2018 ACS",numeric
-E_HH,"Households estimate, 2014-2018 ACS",numeric
-M_HH,"Households estimate MOE, 2014-2018 ACS",numeric
-E_POV,"Persons below poverty estimate, 2014-2018 ACS",numeric
-M_POV,"Persons below poverty estimate MOE, 2014-2018 ACS",numeric
-E_UNEMP,"Civilian (age 16+) unemployed estimate, 2014- 2018 ACS",numeric
-M_UNEMP,"Civilian (age 16+) unemployed estimate MOE, 2014- 2018 ACS",numeric
-E_PCI,"Per capita income estimate, 2014- 2018 ACS",numeric
-M_PCI,"Per capita income estimate MOE, 2014- 2018 ACS",numeric
-E_NOHSDP,"Persons (age 25+) with no high school diploma estimate, 2014- 2018 ACS",numeric
-M_NOHSDP,"Persons (age 25+) with no high school diploma estimate MOE, 2014- 2018 ACS",numeric
-E_AGE65,"Persons aged 65 and older estimate, 2014 - 2018 ACS",numeric
-M_AGE65,"Persons aged 65 and older estimate MOE, 2014 - 2018 ACS",numeric
-E_AGE17,"Persons aged 17 and younger estimate, 2014 - 2018 ACS",numeric
-M_AGE17,"Persons aged 17 and younger estimate MOE, 2014 - 2018 ACS",numeric
-E_DISABL,"Civilian noninstitutionalize d population with a disability estimate, 2014 - 2018 ACS",numeric
-M_DISABL,"Civilian noninstitutionalize d population with a disability estimate MOE, 2014 - 2018 ACS",numeric
-E_SNGPNT,"Single parent household with children under 18 estimate, 2014 - 2018 ACS",numeric
-M_SNGPNT,"Single parent household with children under 18 estimate MOE, 2014 - 2018 ACS",numeric
-E_MINRTY,"Minority (all persons except white, nonHispanic) estimate, 2014-2018 ACS",numeric
-M_MINRTY,"Minority (all persons except white, nonHispanic) estimate MOE, 2014-2018 ACS",numeric
-E_LIMENG,"Persons (age 5+) who speak English ""less than well"" estimate, 2014- 2018 ACS",numeric
-M_LIMENG,"Persons (age 5+) who speak English ""less than well"" estimate MOE, 2014- 2018 ACS",numeric
-E_MUNIT,"Housing in structures with 10 or more units estimate, 2014 -2018 ACS",numeric
-M_MUNIT,"Housing in structures with 10 or more units estimate MOE, 2014 -2018 ACS",numeric
-E_MOBILE,"Mobile homes estimate, 2014 - 2018 ACS",numeric
-M_MOBILE,"Mobile homes estimate MOE, 2014 - 2018 ACS",numeric
-E_CROWD,"At household level (occupied housing units), more people than rooms estimate, 2014- 2018 ACS",numeric
-M_CROWD,"At household level (occupied housing units), more people than rooms estimate MOE, 2014- 2018 ACS",numeric
-E_NOVEH,"ouseholds with no vehicle available estimate, 2014-2018 ACS",numeric
-M_NOVEH,"ouseholds with no vehicle available estimate MOE, 2014-2018 ACS",numeric
-E_GROUPQ,"Persons in institutionalized group quarters estimate, 2014- 2018 ACS",numeric
-M_GROUPQ,"Persons in institutionalized group quarters estimate MOE, 2014- 2018 ACS",numeric
-EP_POV,Percentage of persons below poverty estimate,numeric
-MP_POV,Percentage of persons below poverty estimate MOE,numeric
-EP_UNEMP,Unemployment Rate estimate,numeric
-MP_UNEMP,Unemployment Rate estimate MOE ,numeric
-EP_PCI,"Per capita income estimate, 2014- 2018 ACS",numeric
-MP_PCI,"Per capita income estimate MOE, 2014- 2018 ACS",numeric
-EP_NOHSDP,Percentage of persons with no high school diploma (age 25+) estimate,numeric
-MP_NOHSDP,Percentage of persons with no high school diploma (age 25+) estimate MOE,numeric
-EP_AGE65,"Percentage of persons aged 65 and older estimate, 2014- 2018 ACS",numeric
-MP_AGE65,"Percentage of persons aged 65 and older estimate MOE, 2014-2018 ACS",numeric
-EP_AGE17,"Percentage of persons aged 17 and younger estimate, 2014- 2018 ACS",numeric
-MP_AGE17,"Percentage of persons aged 17 and younger estimate MOE, 2014- 2018 ACS",numeric
-EP_DISABL,"Percentage of civilian noninstitutionalize d population with a disability estimate, 2014-2018 ACS",numeric
-MP_DISABL,"Percentage of civilian noninstitutionalize d population with a disability estimate MOE, 2014-2018 ACS",numeric
-EP_SNGPNT,"Percentage of single parent households with children under 18 estimate, 2014- 2018 ACS",numeric
-MP_SNGPNT,"Percentage of single parent households with children under 18 estimate MOE, 2014- 2018 ACS",numeric
+﻿COLUMN_NAME,DESCRIPTION,TYPE,THEME,THEME_DESCR
+ST,State-level FIPS code,character,,
+STATE,State name,character,,
+ST_ABBR,State abbreviation,character,,
+COUNTY,County name,character,,
+FIPS,County-level FIPS code,character,,
+LOCATION,"Text description of tract, county, state",character,,
+AREA_SQMI,Tract area in square miles,numeric,,
+E_TOTPOP,"Population estimate, 2014-2018 ACS",numeric,,
+M_TOTPOP,"Population estimate MOE, 2014-2018 ACS",numeric,,
+E_HU,"Housing units estimate, 2014-2018 ACS",numeric,,
+M_HU,"Housing units estimate MOE, 2014-2018 ACS",numeric,,
+E_HH,"Households estimate, 2014-2018 ACS",numeric,,
+M_HH,"Households estimate MOE, 2014-2018 ACS",numeric,,
+E_POV,"Persons below poverty estimate, 2014-2018 ACS",numeric,1,Socioeconomic Status
+M_POV,"Persons below poverty estimate MOE, 2014-2018 ACS",numeric,1,Socioeconomic Status
+E_UNEMP,"Civilian (age 16+) unemployed estimate, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+M_UNEMP,"Civilian (age 16+) unemployed estimate MOE, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+E_PCI,"Per capita income estimate, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+M_PCI,"Per capita income estimate MOE, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+E_NOHSDP,"Persons (age 25+) with no high school diploma estimate, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+M_NOHSDP,"Persons (age 25+) with no high school diploma estimate MOE, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+E_AGE65,"Persons aged 65 and older estimate, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+M_AGE65,"Persons aged 65 and older estimate MOE, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+E_AGE17,"Persons aged 17 and younger estimate, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+M_AGE17,"Persons aged 17 and younger estimate MOE, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+E_DISABL,"Civilian noninstitutionalize d population with a disability estimate, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+M_DISABL,"Civilian noninstitutionalize d population with a disability estimate MOE, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+E_SNGPNT,"Single parent household with children under 18 estimate, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+M_SNGPNT,"Single parent household with children under 18 estimate MOE, 2014 - 2018 ACS",numeric,2,Household Composition and Disability
+E_MINRTY,"Minority (all persons except white, nonHispanic) estimate, 2014-2018 ACS",numeric,3,Minority Status and Language
+M_MINRTY,"Minority (all persons except white, nonHispanic) estimate MOE, 2014-2018 ACS",numeric,3,Minority Status and Language
+E_LIMENG,"Persons (age 5+) who speak English ""less than well"" estimate, 2014- 2018 ACS",numeric,3,Minority Status and Language
+M_LIMENG,"Persons (age 5+) who speak English ""less than well"" estimate MOE, 2014- 2018 ACS",numeric,3,Minority Status and Language
+E_MUNIT,"Housing in structures with 10 or more units estimate, 2014 -2018 ACS",numeric,4,Housing Type and Transportation
+M_MUNIT,"Housing in structures with 10 or more units estimate MOE, 2014 -2018 ACS",numeric,4,Housing Type and Transportation
+E_MOBILE,"Mobile homes estimate, 2014 - 2018 ACS",numeric,4,Housing Type and Transportation
+M_MOBILE,"Mobile homes estimate MOE, 2014 - 2018 ACS",numeric,4,Housing Type and Transportation
+E_CROWD,"At household level (occupied housing units), more people than rooms estimate, 2014- 2018 ACS",numeric,4,Housing Type and Transportation
+M_CROWD,"At household level (occupied housing units), more people than rooms estimate MOE, 2014- 2018 ACS",numeric,4,Housing Type and Transportation
+E_NOVEH,"ouseholds with no vehicle available estimate, 2014-2018 ACS",numeric,4,Housing Type and Transportation
+M_NOVEH,"ouseholds with no vehicle available estimate MOE, 2014-2018 ACS",numeric,4,Housing Type and Transportation
+E_GROUPQ,"Persons in institutionalized group quarters estimate, 2014- 2018 ACS",numeric,4,Housing Type and Transportation
+M_GROUPQ,"Persons in institutionalized group quarters estimate MOE, 2014- 2018 ACS",numeric,4,Housing Type and Transportation
+EP_POV,Percentage of persons below poverty estimate,numeric,1,Socioeconomic Status
+MP_POV,Percentage of persons below poverty estimate MOE,numeric,1,Socioeconomic Status
+EP_UNEMP,Unemployment Rate estimate,numeric,1,Socioeconomic Status
+MP_UNEMP,Unemployment Rate estimate MOE ,numeric,1,Socioeconomic Status
+EP_PCI,"Per capita income estimate, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+MP_PCI,"Per capita income estimate MOE, 2014- 2018 ACS",numeric,1,Socioeconomic Status
+EP_NOHSDP,Percentage of persons with no high school diploma (age 25+) estimate,numeric,1,Socioeconomic Status
+MP_NOHSDP,Percentage of persons with no high school diploma (age 25+) estimate MOE,numeric,1,Socioeconomic Status
+EP_AGE65,"Percentage of persons aged 65 and older estimate, 2014- 2018 ACS",numeric,2,Household Composition and Disability
+MP_AGE65,"Percentage of persons aged 65 and older estimate MOE, 2014-2018 ACS",numeric,2,Household Composition and Disability
+EP_AGE17,"Percentage of persons aged 17 and younger estimate, 2014- 2018 ACS",numeric,2,Household Composition and Disability
+MP_AGE17,"Percentage of persons aged 17 and younger estimate MOE, 2014- 2018 ACS",numeric,2,Household Composition and Disability
+EP_DISABL,"Percentage of civilian noninstitutionalize d population with a disability estimate, 2014-2018 ACS",numeric,2,Household Composition and Disability
+MP_DISABL,"Percentage of civilian noninstitutionalize d population with a disability estimate MOE, 2014-2018 ACS",numeric,2,Household Composition and Disability
+EP_SNGPNT,"Percentage of single parent households with children under 18 estimate, 2014- 2018 ACS",numeric,2,Household Composition and Disability
+MP_SNGPNT,"Percentage of single parent households with children under 18 estimate MOE, 2014- 2018 ACS",numeric,2,Household Composition and Disability
+ EP_MINRTY,"Percentage minority (all persons except white, nonHispanic) estimate, 2014-2018 ACS",numeric,3,Minority Status and Language
+MP_MINRTY,"Percentage minority (all persons except white, nonHispanic) estimate MOE, 2014-2018 ACS",numeric,3,Minority Status and Language
+EP_LIMENG,"Percentage of persons (age 5+) who speak English ""less than well"" estimate, 2014- 2018 ACS",numeric,3,Minority Status and Language
+MP_LIMENG,"Percentage of persons (age 5+) who speak English ""less than well"" estimate MOE, 2014- 2018 ACS",numeric,3,Minority Status and Language
+EP_MUNIT,Percentage of housing in structures with 10 or more units estimate,numeric,4,Housing Type and Transportation
+MP_MUNIT,Percentage of housing in structures with 10 or more units estimate MOE,numeric,4,Housing Type and Transportation
+EP_MOBILE,Percentage of mobile homes estimate,numeric,4,Housing Type and Transportation
+MP_MOBILE,Percentage of mobile homes estimate MOE,numeric,4,Housing Type and Transportation
+EP_CROWD,Percentage of occupied housing units with more people than rooms estimate,numeric,4,Housing Type and Transportation
+MP_CROWD,Percentage of occupied housing units with more people than rooms estimate MOE,numeric,4,Housing Type and Transportation
+EP_NOVEH,Percentage of households with no vehicle available estimate,numeric,4,Housing Type and Transportation
+MP_NOVEH,Percentage of households with no vehicle available estimate MOE,numeric,4,Housing Type and Transportation
+EP_GROUPQ,"Percentage of persons in institutionalized group quarters estimate, 2014- 2018 ACS",numeric,4,Housing Type and Transportation
+MP_GROUPQ,"Percentage of persons in institutionalized group quarters estimate MOE, 2014- 2018 ACS",numeric,4,Housing Type and Transportation
+EPL_POB,Percentile Percentage of persons below poverty estimate,numeric,1,Socioeconomic Status
+EPL_UNEMP,Percentile Percentage of civilian (age 16+) unemployed estimate,numeric,1,Socioeconomic Status
+EPL_PCI,Percentile per capita income estimate,numeric,1,Socioeconomic Status
+EPL_NOHSDP,Percentile Percentage of persons with no high school diploma (age 25+) estimate,numeric,1,Socioeconomic Status
+SPL_THEME1,Sum of series for Socioeconomic theme,numeric,1,Socioeconomic Status
+RPL_THEME1,Percentile ranking for Socioeconomic theme summary,numeric,1,Socioeconomic Status
+EPL_AGE65,Percentile percentage of persons aged 65 and older estimate,numeric,2,Household Composition and Disability
+EPL_AGE17,Percentile percentage of persons aged 17 and younger estimate,numeric,2,Household Composition and Disability
+EPL_DISABL,Percentile percentage of civilian noninstitutionalized population with a disability estimate,numeric,2,Household Composition and Disability
+EPL_SNGPNT,Percentile percentage of single parent households with children under 18 estimate,numeric,2,Household Composition and Disability
+SPL_THEME2,Sum of series for Household Composition theme,numeric,2,Household Composition and Disability
+RPL_THEME2,Percentile ranking for Household Composition theme summary,numeric,2,Household Composition and Disability
+EPL_MINRTY,"Percentile percentage minority (all persons except white, non - Hispanic) estimate",numeric,3,Minority Status and Language
+EPL_LIMENG,"Percentile percentage of persons (age 5+) who speak English ""less than well"" estimate",numeric,3,Minority Status and Language
+SPL_THEME3,Sum of series for Minority Status/Language theme,numeric,3,Minority Status and Language
+RPL_THEME3,Percentile ranking for Minority Status/Language theme,numeric,3,Minority Status and Language
+EPL_MUNIT,Percentile percentage housing in structures with 10 or more units estimate,numeric,4,Housing Type and Transportation
+EPL_MOBILE,Percentile percentage mobile homes estimate,numeric,4,Housing Type and Transportation
+EPL_CROWD,Percentile percentage households with more people than rooms estimate,numeric,4,Housing Type and Transportation
+EPL_NOVEH,Percentile percentage households with no vehicle available estimate,numeric,4,Housing Type and Transportation
+EPL_GROUPQ,Percentile percentage of persons in institutionalized group quarters estimate,numeric,4,Housing Type and Transportation
+SPL_THEME4,Sum of series for Housing Type/ Transportation theme,numeric,4,Housing Type and Transportation
+RPL_THEME4,Percentile ranking for Housing Type/ Transportation theme,numeric,4,Housing Type and Transportation
+SPL_THEMES,Sum of series themes,numeric,,
+RPL_THEMES,Overall percentile ranking,numeric,,
+F_POV,"Flag - the percentage of persons in poverty is in the 90th percentile (1 = yes, 0 = no)",numeric,1,Socioeconomic Status
+F_UNEMP,"Flag - the percentage of civilian unemployed is in the 90th percentile (1 = yes, 0 = no)",numeric,1,Socioeconomic Status
+F_PCI,"Flag - per capita income is in the 90th percentile (1 = yes, 0 = no)",numeric,1,Socioeconomic Status
+F_NOHSDP,"Flag - the percentage of persons with no high school diploma is in the 90th percentile (1 = yes, 0 = no)",numeric,1,Socioeconomic Status
+F_THEME1,Sum of flags for Socioeconomic Status theme,numeric,1,Socioeconomic Status
+F_AGE65,"Flag - the percentage of persons aged 65 and older is in the 90th percentile (1 = yes, 0 = no)",numeric,2,Household Composition and Disability
+F_AGE17,"Flag - the percentage of persons aged 17 and younger is in the 90th percentile (1 = yes, 0 = no)",numeric,2,Household Composition and Disability
+F_DISABL,"Flag - the percentage of persons with a disability is in the 90th percentile (1 = yes, 0 = no)",numeric,2,Household Composition and Disability
+F_SNGPNT,"lag - the percentage of single parent households is in the 90th percentile (1 = yes, 0 = no)",numeric,2,Household Composition and Disability
+F_THEME2,Sum of flags for Household Composition theme,numeric,2,Household Composition and Disability
+F_MINRTY,"Flag - the percentage of minority is in the 90th percentile (1 = yes, 0 = no)",numeric,3,Minority Status and Language
+F_LIMENG,"Flag - the percentage those with limited English is in the 90th percentile (1 = yes, 0 = no)",numeric,3,Minority Status and Language
+F_THEME3,Sum of flags for Minority Status/Language theme,numeric,3,Minority Status and Language
+F_MUNIT,"Flag - the percentage of households in multi - unit housing is in the 90th percentile (1 = yes, 0 = no) ",numeric,4,Housing Type and Transportation
+F_MOBILE,"Flag - the percentage of mobile homes is in the 90th percentile (1 = yes, 0 = no) ",numeric,4,Housing Type and Transportation
+F_CROWD,"Flag - the percentage of crowded households is in the 90th percentile (1 = yes, 0 = no) ",numeric,4,Housing Type and Transportation
+F_NOVEH,"Flag - the percentage of households with no vehicles is in the 90th percentile (1 = yes, 0 = no) ",numeric,4,Housing Type and Transportation
+F_GROUPQ,"Flag - the percentage of persons in institutionalized group quarters is in the 90th percentile (1 = yes, 0 = no)",numeric,4,Housing Type and Transportation
+F_THEME4,Sum of flags for Housing Type/ Transportation theme,numeric,4,Housing Type and Transportation
+F_TOTAL,Sum of flags for the four themes ,numeric,,
+E_UNINSUR,"Adjunct variable - Uninsured in the total civilian noninstitutionalized population estimate, 2014- 2018 ACS",numeric,,
+M_UNINSUR,"Adjunct variable - Uninsured in the total civilian noninstitutionalized population estimate MOE, 2014-2018 ACS",numeric,,
+EP_UNINSUR,"Adjunct variable - Percentage uninsured in the total civilian noninstitutionalized population estimate, 2014- 2018 ACS",numeric,,
+MP_UNINSUR,"Adjunct variable - Percentage uninsured in the total civilian noninstitutionalized population estimate <OE, 2014- 2018 ACS",numeric,,
+E_DAYPOP,"Adjunct variable - Estimated daytime population, LandScan 2018",numeric,,
+Shape,,Multi-polygon,,
