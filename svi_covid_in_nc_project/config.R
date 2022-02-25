@@ -20,9 +20,11 @@ COVID_DATA_PATH <- paste(DATA_PATH, "covid", sep = '/')
 # Filenames
 SVI_DOC_FILENAME <- "SVI2018Documentation_01192022_1.pdf"
 SVI_CSV_FILENAME <- paste(STATE_COUNTY, "csv", sep = '.')
+SVI_RAW_FILENAME <- paste(paste("raw", STATE_COUNTY, sep = "_"), "RData", sep=".")
 SVI_RDATA_FILENAME <- paste(STATE_COUNTY, ".RData", sep = '')
 SHAPES_ZIP_FILENAME <- paste(STATE_COUNTY, ".zip", sep = '')
 COUNTIES_FIPS_RDATA_FILENAME <- "counties_fips.RData"
+COVID_RAW_FILENAME <- "raw_nc_covid_data.RData"
 COVID_RDATA_FILENAME <- "nc_covid_data.RData"
 
 # URLS
@@ -40,6 +42,7 @@ SVI_DOC_DST <- paste(SVI_DOCS_PATH, SVI_DOC_FILENAME, sep = '/')
 SVI_CSV_SRC <- 
   paste(SVI_URL, "CSV/States_Counties", SVI_CSV_FILENAME, sep = '/')
 SVI_RDATA_DST <- paste(SVI_DATA_PATH, SVI_RDATA_FILENAME, sep = '/')
+SVI_RAW_DST <- paste(SVI_DATA_PATH, SVI_RAW_FILENAME, sep = '/')
 
 # SVI Shapefiles
 SHAPES_ZIP_SRC <- 
@@ -53,7 +56,13 @@ COUNTIES_FIPS_RDATA_DST <- paste(COUNTIES_FIPS_DATA_PATH,
                                   COUNTIES_FIPS_RDATA_FILENAME, sep = "/")
 
 # CDC COVID-19 Data
+COVID_RAW_DST <- paste(COVID_DATA_PATH, COVID_RAW_FILENAME, sep = '/')
 COVID_RDATA_DST <- paste(COVID_DATA_PATH, COVID_RDATA_FILENAME, sep = '/')
+
+get_county_case_cnt <- function(data, new_col = CASE_COUNT) {
+  names(data)
+  data %>% group_by(COUNTY) %>% summarize(new_col = n())
+}
 
 # Store in a variable the fact that the config.R file has been loaded
 PROJECT_CONFIG_LOADED <- T
