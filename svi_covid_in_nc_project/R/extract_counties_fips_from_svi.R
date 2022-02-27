@@ -1,9 +1,9 @@
 # A script to extract county names and fips from the CDC SVI data for NC
 
 # Global variables
-if (!exists('PROJECT_CONFIG_LOADED')) {
-  if (file.exists("config.R")) {
-    source("config.R")
+if (!exists('SVI_CONFIG_LOADED')) {
+  if (file.exists("./R/config_svi.R")) {
+    source("./R/config_svi.R")
   } else {
     stop("Error: missing config.R file")
   }
@@ -20,27 +20,26 @@ if (!file.exists(COUNTIES_FIPS_RDATA_DST)) {
   pacman::p_load(char = Packages)
   
   # Read in the fips and county names from the data file
-  if (file.exists(SVI_RDATA_DST)) {
-    load(SVI_RDATA_DST) 
+  if (file.exists(SVI_RDATA)) {
+    load(SVI_RDATA) 
   } else {
     stop("Error loading SVI RData file: file does not exist!")
   }  
   
   
   counties_fips <- svi_data %>% 
-    select(FIPS, COUNTY) %>% 
+    select(COUNTY_FIPS_CODE, COUNTY) %>% 
     unique() # I only want one instance of each fips code and county
   
   # make county names uppercase
   counties_fips$COUNTY <- toupper(counties_fips$COUNTY)
   
   # order the dataframe by fips code in ascending order
-  counties_fips <- counties_fips[order(counties_fips$FIPS), ]
+  counties_fips <- counties_fips[order(counties_fips$COUNTY_FIPS_CODE), ]
   
   # save the dataframe as a RData file in the data directory
   save(counties_fips, file = COUNTIES_FIPS_RDATA_DST)
   
 }
 
-if (exists('counties_fips')) rm(counties_fips)
-if (exists('svi_data')) rm(svi_data)
+rm(list = c('counties_fips', 'svi_data'))

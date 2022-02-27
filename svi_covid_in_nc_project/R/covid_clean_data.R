@@ -1,15 +1,19 @@
+this_script <- "covid_clean_data.R"
+print(paste(this_script, ": top", sep = ""))
+
 # Global variables
-if (!exists('PROJECT_CONFIG_LOADED')) {
-  if (file.exists("config.R")) {
-    source("config.R")
+if (!exists('COVID_CONFIG_LOADED')) {
+  if (file.exists("./R/config_covid.R")) {
+    source("./R/config_covid.R")
   } else {
-    stop("Error: missing config.R file")
+    stop(paste(this_script, ": Error: missing config_covid.R file"))
   }
 }
 
 # Load necessary libraries
 Packages <- c("lubridate","tidyverse")
 pacman::p_load(char = Packages)
+rm('Packages')
 
 cols_factor <- c("case_month", "res_county", "county_fips_code", "age_group", 
                  "sex", "race", "ethnicity", "process", "exposure_yn", 
@@ -17,19 +21,9 @@ cols_factor <- c("case_month", "res_county", "county_fips_code", "age_group",
                  "death_yn", "underlying_conditions_yn")
 cols_num <- c("case_positive_specimen", "case_onset_interval")
 
-if (!dir.exists(DATA_PATH)) dir.create(DATA_PATH)
-if (!dir.exists(COVID_DATA_PATH)) dir.create(COVID_DATA_PATH)
+if (!exists('COVID_RAW_RDATA')) source('./R/covid_download_data.R')
 
-# Load necessary libraries
-Packages <- c("RSocrata")
-pacman::p_load(char = Packages)
-
-if (!file.exists(COVID_RAW_DST)) {
-  covid_data <- subset(read.socrata(COVID_URL))
-  save(covid_data, file = COVID_RAW_DST)
-} else {
-  load(COVID_RAW_DST)
-}
+load(COVID_RAW_RDATA)
 
 # Remove columns related to state since we've only downloaded data for 
 # North Carolina (2 = state name, 3 = state fips code)
@@ -61,7 +55,11 @@ covid_data <- rename_with(covid_data, toupper)
 #covid_data %>% group_by(res_county) %>%  summarize(CASE_COUNT = n())
 
 # Save the modified dataframe to an RData file for later use
-save(covid_data, file = COVID_RDATA_DST)
+save(covid_data, file = COVID_RDATA)
 
-# Remove the dataframe to free up memory
-rm(covid_data)
+
+rm(list = c("covid_data",
+            "col",
+            "cols_num",
+            "cols_factor",
+            "this_script"))
