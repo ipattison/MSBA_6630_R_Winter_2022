@@ -1,0 +1,103 @@
+---
+title: "Final Project"
+author: "Israel J. Pattison"
+date: "3/11/2022"
+output: html_document
+---
+
+```{r echo = FALSE, warning = FALSE, message = FALSE}
+library(tidyverse)
+library(knitr)
+library(car)
+```
+
+```{r results = FALSE}
+load("./data/covid_svi_pct.RData")
+```
+
+
+```{r}
+variables <- colnames(covid_svi_pct)
+kable(variables, format = "html", col.names = c("Variables"))
+```
+```{r}
+str(population)
+```
+
+
+```{r}
+summary(covid_svi_pct$P_COVID)
+```
+
+```{r}
+boxplot(covid_svi_pct$P_COVID)
+```
+
+```{r}
+covid_svi_pct %>% cor(y = covid_svi_pct$P_COVID)
+```
+
+
+```{r}
+cor_socioecon <- covid_svi_pct[,c("EP_POV","EP_PCI","EP_UNEMP","EP_NOHSDP")] %>%  cor(y = covid_svi_pct$P_COVID)
+kable(cor_socioecon)
+```
+
+```{r}
+pairs(~P_COVID + EP_POV + EP_PCI + EP_NOHSDP, data = covid_svi_pct, labels = c("COVID-19","Poverty", "Per Capita Income", "No High School Diploma"), main = "Factors Related to Socioeconomic Status")
+```
+
+```{r}
+cor_hhcomp <- covid_svi_pct[,c("EP_AGE65","EP_AGE17","EP_DISABL","EP_SNGPNT")] %>%  cor(y = covid_svi_pct$P_COVID)
+kable(cor_hhcomp)
+```
+
+```{r}
+pairs(~P_COVID + EP_AGE17 + EP_SNGPNT, data = covid_svi_pct, labels = c("COVID-19", "Children", "Single Parent"), main = "Factors Related to Household Composition and Disability")
+```
+
+```{r}
+cor_minlang <- covid_svi_pct[,c("EP_MINRTY", "EP_LIMENG")] %>%  cor(y = covid_svi_pct$P_COVID)
+kable(cor_minlang)
+```
+
+```{r}
+pairs(~P_COVID + EP_MINRTY + EP_LIMENG, data = covid_svi_pct, labels = c("COVID-19", "Minority", "Limited English"), main = "Factors Related to Minority Status and Language")
+```
+
+```{r}
+cor_houstrans <- covid_svi_pct[,c("EP_MUNIT", "EP_MOBILE", "EP_CROWD", "EP_NOVEH", "EP_GROUPQ")] %>%  cor(y = covid_svi_pct$P_COVID)
+kable(cor_houstrans)
+```
+
+```{r}
+pairs(~P_COVID+EP_MOBILE+EP_CROWD+EP_NOVEH, data = covid_svi_pct, labels = c("COVID-19", "Manufactured Homes", "Multi-Household Dwelling", "No Vehicle"), main = "Factors Related to Housing Type and Transportation")
+```
+
+
+```{r}
+scatterplot(P_COVID ~ EP_NOHSDP, data = covid_svi_pct, xlab = "Percent of residents with no high school diploma", ylab = "Percent of residents with COVID-19", main = "High School Education and COVID-19 Infection Rates")
+```
+
+```{r}
+scatterplot(P_COVID ~ EP_PCI, data = covid_svi_pct, xlab = "Per capita income", ylab = "Percent of residents with COVID-19", main = "Per Capita Income and COVID-19 Infection Rates")
+
+```
+
+```{r}
+scatterplot(P_COVID ~ EP_POV, data = covid_svi_pct, xlab = "Percentage of Residents In Poverty", ylab = "Percent of residents with COVID-19", main = "Poverty and COVID-19 Infection Rates")
+
+```
+
+```{r}
+scatterplot(P_COVID ~ EP_MOBILE, data = covid_svi_pct, xlab = "Percentage of Residents Living in Manufactured Houses", ylab = "Percent of residents with COVID-19", main = "Manufactured Housing and COVID-19 Infection Rates")
+```
+
+```{r}
+scatterplot(P_COVID ~ EP_MUNIT, data = covid_svi_pct, xlab = "Percentage of Residents Living in Multi-Household Dwellings", ylab = "Percent of residents with COVID-19", main = "Multi-Household Housing and COVID-19 Infection Rates")
+```
+
+```{r}
+scatterplot(P_COVID ~ EP_AGE17, data = covid_svi_pct, xlab = "Percentage of Households with Children Under 18 Years Old", ylab = "Percent of residents with COVID-19", main = "Households with Children and COVID-19 Infection Rates")
+```
+
